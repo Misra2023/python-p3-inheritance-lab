@@ -25,3 +25,14 @@ class TestStudent:
         my_student = Student("My", "Student")
         my_student.learn("New information")
         assert("New information" in my_student.knowledge)
+
+
+class Student(User):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.knowledge = []
+
+    def learn(self, information):
+        self.knowledge.append(information)
+
+
